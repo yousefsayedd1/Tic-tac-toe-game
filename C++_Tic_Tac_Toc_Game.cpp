@@ -52,25 +52,28 @@ int main()
 	return 0;
 }
 
-
+// drow the table function
 void drow()
 {
 	cout << "\t" << a1 << "\t" << "|" << "\t" << a2 << "\t" << "|" << "\t" << a3 << endl<<endl;
 	cout << "\t" << a4 << "\t" << "|" << "\t" << a5 << "\t" << "|" << "\t" << a6 << endl<<endl;
 	cout << "\t" << a7 << "\t" << "|" << "\t" << a8 << "\t" << "|" << "\t" << a9 << endl<<endl;
 }
-
+// Player X turn function
 void  Xplay()
 {
+	// tell player to play
 	cout << "player X your turn enter number :";
 	label:
+	// get the position
 	cin >> ix;
+	// the player input a wrong number
 	 if (ix<1 ||ix>9)
 	{
 		cout<<"Wrong number plz enter anther number :";
 		goto label;
 	}
-	
+	// convert the position number to his mark
 	switch (ix)
 	{
 	case 1:
@@ -161,18 +164,21 @@ void  Xplay()
 		break;
 	}
 }
-
+// Player O turn function
 void Oplay()
 {
+	// tell player to play
 	cout << "player O your turn enter number  :";
 	label:
+	// get the position
 	cin >> io;
+	// the player input a wrong number
 	 if (io<1 ||io>9)
 	{
 		cout<<"Wrong number plz enter anther number :";
 		goto label;
 	}
-	
+	// convert the position number to his mark
 	switch (io)
 	{
 	case 1:
@@ -265,10 +271,10 @@ void Oplay()
 		break;
 	}
 }
-
+// player won function
 void pwon()
 
-{
+{	// if player X won tell him and ask if they want to play again
 	if (a1 == a2 && a2 == a3 && a3 == 'X' || a4 == a5 && a5 == a6 && a6 == 'X' || a7 == a8 && a8 == a9 && a9 == 'X'
 		|| a1 == a4 && a4 == a7 && a7 == 'X' || a2 == a5 && a5 == a8 && a8 == 'X' || a3 == a6 && a6 == a9 && a9 == 'X'
 		|| a1 == a5 && a5 == a9 && a9 == 'X' || a3 == a5 && a5 == a7 && a7 == 'X')
@@ -278,6 +284,7 @@ void pwon()
 		cin >> n;
 		
 	}
+	// if player O won tell him and ask if they want to play again
 	else if (a1 == a2 && a2 == a3 &&a3=='O' || a4 == a5 && a5 == a6 && a6 == 'O' || a7 == a8 && a8 == a9 && a9 == 'O'
 		|| a1 == a4 && a4 == a7 && a7 == 'O' || a2 == a5 && a5 == a8 && a8 == 'O' || a3 == a6 && a6 == a9 && a9 == 'O'
 		|| a1 == a5 && a5 == a9 && a9== 'O' || a3 == a5 && a5 == a7 && a7 == 'O')
@@ -286,11 +293,11 @@ void pwon()
 		cout << "want play another game y for yes ,n for no" << endl;
 		cin >> n;
 		}
-			if (n == 'y')
-			{
-				clear();
-			
-			}
+		// if they want to play again reset the table, if no end the Program
+		if (n == 'y')
+		{
+			clear();
+		}
 		else if (n == 'n')
    		 exit (EXIT_FAILURE);
 
